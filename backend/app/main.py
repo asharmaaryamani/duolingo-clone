@@ -12,7 +12,10 @@ app = FastAPI(title="Duolingo Clone API", version="1.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # relaxed for local/Codespaces dev
+    allow_origins=[
+        "http://localhost:3000",
+        "https://duolingo-clone-jet.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
